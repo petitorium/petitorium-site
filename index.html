@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Petitorium is a powerful terminal-based API testing client. Test and debug HTTP APIs directly from your command line with collections, plugins, and environment management.">
+    <meta name="keywords" content="API testing, terminal, CLI, HTTP client, developer tools, Petitorium, open source">
+    <meta name="author" content="Petitorium">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://petitorium.github.io/">
+    <meta property="og:title" content="Petitorium - Terminal API Testing Client">
+    <meta property="og:description" content="A powerful, extensible command-line tool for testing and debugging HTTP APIs with a modern terminal interface.">
+    <meta property="og:image" content="https://petitorium.github.io/petitorium.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://petitorium.github.io/">
+    <meta property="twitter:title" content="Petitorium - Terminal API Testing Client">
+    <meta property="twitter:description" content="A powerful, extensible command-line tool for testing and debugging HTTP APIs with a modern terminal interface.">
+    <meta property="twitter:image" content="https://petitorium.github.io/petitorium.png">
+
     <title>Petitorium - Terminal API Testing Client</title>
+    <link rel="icon" type="image/png" href="petitorium.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-    <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
 </head>
 <body>
     <header class="md-header md-header--shadow md-header--lifted">
@@ -16,15 +34,15 @@
                 <span class="logo-text">Petitorium</span>
             </a>
             <div class="md-header__title" data-md-component="header-title">
-                <!-- <div class="md-header__ellipsis"> -->
-                    <!-- <div class="md-header__topic"> -->
-                    <!--     <span class="md-ellipsis">Petitorium</span> -->
-                    <!-- </div> -->
-                    <!-- <div class="md-header__topic" data-md-component="header-topic"> -->
-                    <!--     <span class="md-ellipsis">Terminal API Testing Client</span> -->
-                    <!-- </div> -->
-                <!-- </div> -->
             </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
              <nav class="md-header__nav">
                  <ul class="md-header__nav-list">
                      <li class="md-header__nav-item"><a href="#hero-section" class="md-header__nav-link">Home</a></li>
@@ -39,303 +57,6 @@
     </header>
 
     <div class="md-container">
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-
-            body {
-                background-image: linear-gradient(0deg,
-                        #2E3440 0%,
-                        #3B4252 25%,
-                        #434C5E 50%,
-                        #4C566A 75%,
-                        #81A1C1 100%);
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: auto;
-            }
-
-            h1, h2, h3, h4, h5, h6 {
-                font-family: "Open Sans", sans-serif;
-                font-weight: 800 !important;
-            }
-
-            .logo-text {
-                font-family: "Roboto Mono", monospace;
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: #88C0D0;
-            }
-
-            .hero-text {
-                /* padding: 0.4rem 1.8rem; */
-                text-align: left;
-                max-width: 900px;
-                margin: 0 auto;
-            }
-
-            .hero-image svg {
-                width: 100%;
-                height: auto;
-                max-width: 1000px;
-                max-height: 55vh;
-                display: block;
-                margin: 0 auto;
-                padding: 1rem 1.2rem 1rem 1.2rem;
-            }
-
-            #home-title {
-                margin: 0 0 0.3rem 0;
-            }
-
-            p#home-intro {
-                font-size: 0.9rem;
-            }
-
-            .md-nav__source {
-                background-color: hsla(287deg, 100%, 10%, 0.8) !important;
-            }
-
-            #home-subtitle {
-                font-family: "Roboto Mono", monospace;
-                font-size: 1rem;
-                line-height: 1.5rem;
-                opacity: 92%;
-                margin: 0 0 1rem 0;
-                color: #f0f0f0;
-                word-spacing: -0.05em;
-            }
-
-            .button-bar {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                gap: 1rem;
-            }
-
-            .gradient-text {
-                background: linear-gradient(to left, #81A1C1, #88C0D0);
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
-            }
-
-            .subtle-purple-glow {
-                position: relative;
-                z-index: 1;
-                white-space: nowrap;
-                display: inline-block;
-            }
-
-            .subtle-purple-glow::after {
-                content: attr(data-text);
-                position: absolute;
-                left: 0;
-                top: 0;
-                z-index: -1;
-                color: rgba(136, 192, 208, 0.5);
-                filter: blur(8px);
-                -webkit-filter: blur(8px);
-                white-space: nowrap;
-            }
-
-
-
-            h2.feature-title {
-                font-family: "Roboto Mono", monospace;
-                font-size: 1.4rem;
-                font-weight: 550;
-                color: #f0f0f0;
-                margin-bottom: 0.5rem;
-                margin-left: 0.65rem;
-                margin-top: 0.5rem;
-            }
-
-            .feature-title-text {
-                max-width: 80%;
-            }
-
-            .feature-title-svg {
-                max-width: 20%;
-            }
-
-            #features-section {
-                padding: 6rem 1.4rem;
-                display: flex;
-                flex-direction: column;
-                gap: 4rem;
-            }
-
-            .feature-image {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .feature-image img,
-            .feature-image video {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-                border: solid 2px rgba(94, 129, 172, 0.4);
-                margin-top: 0.8rem;
-            }
-
-            #features-section .feature-description {
-                color: #D8DEE9;
-                font-size: 0.84rem;
-                border-left: solid 2px rgba(94, 129, 172, 0.4);
-                padding-left: 12px;
-            }
-
-            .feature-columns {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-                padding: 2rem 1.4rem;
-                position: relative;
-            }
-
-            .feature-column {
-                position: relative;
-                z-index: 1;
-            }
-
-            .feature-column-description {
-                color: #d0d0d0;
-                font-size: 0.9rem;
-            }
-
-            .feature-column::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: radial-gradient(circle at top, rgba(136, 192, 208, 0.2) 0%, rgba(94, 129, 172, 0.1) 50%, rgba(76, 86, 106, 0) 70%);
-                filter: blur(20px);
-                opacity: 0.5;
-                z-index: -1;
-                transition: all 0.3s ease;
-            }
-
-            .feature-column:hover::before {
-                opacity: 0.8;
-                background: radial-gradient(circle at top, rgba(136, 192, 208, 0.3) 0%, rgba(94, 129, 172, 0.2) 50%, rgba(76, 86, 106, 0) 70%);
-            }
-
-            .feature-column {
-                background: rgba(46, 52, 64, 0.7);
-                border-radius: 8px;
-                padding: 1.5rem;
-                border: 2px solid rgba(94, 129, 172, 0.3);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                transition: all 0.3s ease;
-            }
-
-            .feature-column:hover {
-                border-color: rgba(136, 192, 208, 0.5);
-                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-                transform: translateY(-2px);
-            }
-
-            h3.feature-column-title {
-                font-size: 1.2rem;
-                font-weight: 550;
-                color: #88C0D0;
-                margin: 0 0 0.75rem 0;
-            }
-
-            .feature-column-description {
-                color: #D8DEE9;
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-
-            @media (min-width: 768px) {
-                .feature-columns {
-                    flex-direction: row;
-                    justify-content: space-between;
-                }
-
-                .feature-column {
-                    flex-basis: calc(33.333% - 1.33rem);
-                }
-            }
-
-            @media (min-width: 1024px) {
-                .hero-text {
-                    /* padding: 0.4rem 2.4rem; */
-                }
-
-                .hero-text h1 {
-                    font-size: 2rem;
-                    color: #f0f0f0;
-                }
-
-                #home-subtitle {
-                    font-size: 1.2rem;
-                    line-height: 1.7rem;
-                }
-
-                #home-intro {
-                    font-size: 1rem;
-                }
-
-                #features-section {
-                    max-width: 1200px;
-                    margin: 0 auto;
-                }
-
-                .feature-row {
-                    display: flex;
-                    align-items: space-between;
-                    gap: 2rem;
-                }
-
-                .feature-row:nth-child(even) {
-                    flex-direction: row-reverse;
-                }
-
-                .feature-text {
-                    flex: 1;
-                }
-
-                .feature-image {
-                    flex: 2;
-                }
-
-                .feature-image img,
-                .feature-image video {
-                    margin-top: 0rem;
-                }
-
-                .feature-columns {
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    padding: 4rem 2.4rem;
-                }
-
-                .feature-column-description {
-                    font-size: 1rem;
-                }
-            }
-
-            @media (min-width: 1220px) {
-                body>div.md-container>main>div {
-                    display: none;
-                }
-            }
-
-            @media (min-width: 1080px) {
-                .feature-description {
-                    font-size: 1rem;
-                }
-            }
-        </style>
-
          <section id="hero-section" class="hero has-image">
              <div class="hero-container">
                  <div class="hero-main">
@@ -345,7 +66,12 @@
                      <p class="hero-tagline">A powerful, extensible command-line tool for testing and debugging HTTP APIs with a modern terminal interface</p>
                      <div class="hero-actions">
                          <div class="hero-action">
-                             <a class="hero-button medium brand" href="#install">Install</a>
+                            <div class="install-command">
+                                <code id="install-code">go install github.com/petitorium/petitorium@latest</code>
+                                <button class="copy-btn" id="copy-button" title="Copy to clipboard">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                                </button>
+                            </div>
                          </div>
                          <div class="hero-action">
                              <a class="hero-button medium alt" href="#documentation-section">Documentation</a>
@@ -361,14 +87,34 @@
              </div>
          </section>
 
-         <section id="screenshot-section" style="padding: 4rem 1.4rem;">
-             <h2 style="font-family: 'Roboto Mono', monospace; font-size: 1.4rem; font-weight: 550; color: #88C0D0; margin-bottom: 2rem; margin-left: 0.65rem; margin-top: 0.5rem;">Screenshot</h2>
+         <section id="screenshot-section">
+             <h2 class="section-title">Screenshot</h2>
              <div class="feature-image">
-                 <img src="petitorium.png" alt="Petitorium Screenshot" style="width: 100%; height: auto; max-width: 1000px; border-radius: 8px; border: solid 2px rgba(94, 129, 172, 0.4);">
+                 <img src="petitorium.png" alt="Petitorium Screenshot">
+             </div>
+         </section>
+
+         <section id="terminal-preview-section">
+             <h2 class="section-title">Terminal Experience</h2>
+             <div class="terminal-container">
+                 <div class="terminal-header">
+                     <div class="terminal-buttons">
+                         <span class="dot red"></span>
+                         <span class="dot yellow"></span>
+                         <span class="dot green"></span>
+                     </div>
+                     <div class="terminal-title">petitorium</div>
+                 </div>
+                 <div class="terminal-body">
+                     <div class="terminal-line"><span class="prompt">$</span> <span class="nord14">petitorium</span> themes switch <span class="nord13">nord</span></div>
+                     <div class="terminal-line output"><span class="nord14">✅</span> Theme switched to: <span class="nord8">nord</span></div>
+                     <div class="terminal-line output">The new theme will be applied when you restart <span class="nord10">Petitorium</span>.</div>
+                 </div>
              </div>
          </section>
 
          <section id="features-section">
+             <h2 class="section-title">Key Features</h2>
              <div class="feature-columns">
                  <div class="feature-column">
                      <h3 class="feature-column-title">Request Collections</h3>
@@ -385,8 +131,8 @@
              </div>
          </section>
 
-         <section id="plugins-section" style="padding: 4rem 1.4rem;">
-             <h2 style="font-family: 'Roboto Mono', monospace; font-size: 1.4rem; font-weight: 550; color: #88C0D0; margin-bottom: 2rem; margin-left: 0.65rem; margin-top: 0.5rem;">Available Plugins</h2>
+         <section id="plugins-section">
+             <h2 class="section-title">Available Plugins</h2>
              <div class="feature-columns">
                  <div class="feature-column">
                      <h3 class="feature-column-title">Auth Injector</h3>
@@ -403,8 +149,8 @@
              </div>
          </section>
 
-         <section id="documentation-section" style="padding: 4rem 1.4rem;">
-             <h2 style="font-family: 'Roboto Mono', monospace; font-size: 1.4rem; font-weight: 550; color: #88C0D0; margin-bottom: 2rem; margin-left: 0.65rem; margin-top: 0.5rem;">Documentation</h2>
+         <section id="documentation-section">
+             <h2 class="section-title">Documentation</h2>
              <div class="feature-columns">
                  <div class="feature-column">
                      <h3 class="feature-column-title">Getting Started</h3>
@@ -422,9 +168,20 @@
          </section>
     </div>
 
-    <footer style="text-align: center; padding: 2rem; color: #D8DEE9; background: rgba(46, 52, 64, 0.8); margin-top: 4rem; border-top: 1px solid rgba(94, 129, 172, 0.3);">
-        <p>&copy; 2025 Petitorium. Open source project.</p>
-    </footer>
+      <footer>
+          <p>&copy; 2025 Petitorium. Open source project.</p>
+          <a href="https://www.nordtheme.com" class="nord-badge" target="_blank" rel="noopener noreferrer">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L1.5 6v12L12 24l10.5-6V6L12 0zm0 21.5L3.5 16.5V7.5L12 2.5l8.5 5v9l-8.5 5z"/></svg>
+              Powered by Nord
+          </a>
+      </footer>
+
+
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" title="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </a>
 
     <script src="assets/js/main.js"></script>
 </body>
