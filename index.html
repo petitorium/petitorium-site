@@ -5,89 +5,424 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petitorium - Terminal API Testing Client</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+    <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Petitorium</h1>
+    <header class="md-header md-header--shadow md-header--lifted">
+        <nav class="md-header__inner md-grid">
+            <a href="." title="Petitorium" class="md-header__button md-logo">
+                <span class="logo-text">Petitorium</span>
+            </a>
+            <div class="md-header__title" data-md-component="header-title">
+                <!-- <div class="md-header__ellipsis"> -->
+                    <!-- <div class="md-header__topic"> -->
+                    <!--     <span class="md-ellipsis">Petitorium</span> -->
+                    <!-- </div> -->
+                    <!-- <div class="md-header__topic" data-md-component="header-topic"> -->
+                    <!--     <span class="md-ellipsis">Terminal API Testing Client</span> -->
+                    <!-- </div> -->
+                <!-- </div> -->
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#screenshot">Screenshot</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#plugins">Plugins</a></li>
-                <li><a href="#docs">Documentation</a></li>
-                <li><a href="#github">GitHub</a></li>
-            </ul>
+             <nav class="md-header__nav">
+                 <ul class="md-header__nav-list">
+                     <li class="md-header__nav-item"><a href="#hero-section" class="md-header__nav-link">Home</a></li>
+                     <li class="md-header__nav-item"><a href="#screenshot-section" class="md-header__nav-link">Screenshot</a></li>
+                     <li class="md-header__nav-item"><a href="#features-section" class="md-header__nav-link">Features</a></li>
+                     <li class="md-header__nav-item"><a href="#plugins-section" class="md-header__nav-link">Plugins</a></li>
+                     <li class="md-header__nav-item"><a href="#documentation-section" class="md-header__nav-link">Documentation</a></li>
+                     <li class="md-header__nav-item"><a href="https://github.com/petitorium/petitorium" class="md-header__nav-link">GitHub</a></li>
+                 </ul>
+             </nav>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h2>Terminal API Testing Client</h2>
-                <p>Test APIs directly from your terminal with collections, environments, and extensible plugins</p>
-                <div class="cta-buttons">
-                    <a href="#docs" class="btn-primary">Get Started</a>
-                    <a href="#features" class="btn-secondary">Learn More</a>
-                </div>
-            </div>
-        </section>
+    <div class="md-container">
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
 
-        <section id="screenshot" class="screenshot">
-            <h2>Terminal Interface</h2>
-            <div class="screenshot-container">
-                <img src="assets/images/petitorium_look.png" alt="Petitorium Terminal Interface" class="app-screenshot">
-                <p class="screenshot-caption">Modern terminal-based API testing with collections, environments, and plugins</p>
-            </div>
-        </section>
+            body {
+                background-image: linear-gradient(0deg,
+                        #2E3440 0%,
+                        #3B4252 25%,
+                        #434C5E 50%,
+                        #4C566A 75%,
+                        #81A1C1 100%);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: auto;
+            }
 
-        <section id="features" class="features">
-            <h2>Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Request Collections</h3>
-                    <p>Organize and manage your API requests in hierarchical collections</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Environment Variables</h3>
-                    <p>Manage different environments with variable substitution</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Plugin System</h3>
-                    <p>Extend functionality with custom plugins for auth, logging, and transformations</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Terminal UI</h3>
-                    <p>Modern terminal interface built with Go and tview</p>
-                </div>
-            </div>
-        </section>
+            h1, h2, h3, h4, h5, h6 {
+                font-family: "Open Sans", sans-serif;
+                font-weight: 800 !important;
+            }
 
-        <section id="plugins" class="plugins">
-            <h2>Available Plugins</h2>
-            <div class="plugins-grid">
-                <div class="plugin-card">
-                    <h3>Auth Injector</h3>
-                    <p>Automatically inject authentication headers into requests</p>
-                    <span class="plugin-tag">Security</span>
-                </div>
-                <div class="plugin-card">
-                    <h3>Response Transformer</h3>
-                    <p>Modify and transform HTTP responses before display</p>
-                    <span class="plugin-tag">Utility</span>
-                </div>
-                <div class="plugin-card">
-                    <h3>Request Logger</h3>
-                    <p>Log all HTTP requests and responses for debugging</p>
-                    <span class="plugin-tag">Debugging</span>
-                </div>
-            </div>
-        </section>
-    </main>
+            .logo-text {
+                font-family: "Roboto Mono", monospace;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #88C0D0;
+            }
 
-    <footer>
+            .hero-text {
+                /* padding: 0.4rem 1.8rem; */
+                text-align: left;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .hero-image svg {
+                width: 100%;
+                height: auto;
+                max-width: 1000px;
+                max-height: 55vh;
+                display: block;
+                margin: 0 auto;
+                padding: 1rem 1.2rem 1rem 1.2rem;
+            }
+
+            #home-title {
+                margin: 0 0 0.3rem 0;
+            }
+
+            p#home-intro {
+                font-size: 0.9rem;
+            }
+
+            .md-nav__source {
+                background-color: hsla(287deg, 100%, 10%, 0.8) !important;
+            }
+
+            #home-subtitle {
+                font-family: "Roboto Mono", monospace;
+                font-size: 1rem;
+                line-height: 1.5rem;
+                opacity: 92%;
+                margin: 0 0 1rem 0;
+                color: #f0f0f0;
+                word-spacing: -0.05em;
+            }
+
+            .button-bar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 1rem;
+            }
+
+            .gradient-text {
+                background: linear-gradient(to left, #81A1C1, #88C0D0);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            .subtle-purple-glow {
+                position: relative;
+                z-index: 1;
+                white-space: nowrap;
+                display: inline-block;
+            }
+
+            .subtle-purple-glow::after {
+                content: attr(data-text);
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: -1;
+                color: rgba(136, 192, 208, 0.5);
+                filter: blur(8px);
+                -webkit-filter: blur(8px);
+                white-space: nowrap;
+            }
+
+
+
+            h2.feature-title {
+                font-family: "Roboto Mono", monospace;
+                font-size: 1.4rem;
+                font-weight: 550;
+                color: #f0f0f0;
+                margin-bottom: 0.5rem;
+                margin-left: 0.65rem;
+                margin-top: 0.5rem;
+            }
+
+            .feature-title-text {
+                max-width: 80%;
+            }
+
+            .feature-title-svg {
+                max-width: 20%;
+            }
+
+            #features-section {
+                padding: 6rem 1.4rem;
+                display: flex;
+                flex-direction: column;
+                gap: 4rem;
+            }
+
+            .feature-image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .feature-image img,
+            .feature-image video {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                border: solid 2px rgba(94, 129, 172, 0.4);
+                margin-top: 0.8rem;
+            }
+
+            #features-section .feature-description {
+                color: #D8DEE9;
+                font-size: 0.84rem;
+                border-left: solid 2px rgba(94, 129, 172, 0.4);
+                padding-left: 12px;
+            }
+
+            .feature-columns {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2rem 1.4rem;
+                position: relative;
+            }
+
+            .feature-column {
+                position: relative;
+                z-index: 1;
+            }
+
+            .feature-column-description {
+                color: #d0d0d0;
+                font-size: 0.9rem;
+            }
+
+            .feature-column::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: radial-gradient(circle at top, rgba(136, 192, 208, 0.2) 0%, rgba(94, 129, 172, 0.1) 50%, rgba(76, 86, 106, 0) 70%);
+                filter: blur(20px);
+                opacity: 0.5;
+                z-index: -1;
+                transition: all 0.3s ease;
+            }
+
+            .feature-column:hover::before {
+                opacity: 0.8;
+                background: radial-gradient(circle at top, rgba(136, 192, 208, 0.3) 0%, rgba(94, 129, 172, 0.2) 50%, rgba(76, 86, 106, 0) 70%);
+            }
+
+            .feature-column {
+                background: rgba(46, 52, 64, 0.7);
+                border-radius: 8px;
+                padding: 1.5rem;
+                border: 2px solid rgba(94, 129, 172, 0.3);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .feature-column:hover {
+                border-color: rgba(136, 192, 208, 0.5);
+                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+                transform: translateY(-2px);
+            }
+
+            h3.feature-column-title {
+                font-size: 1.2rem;
+                font-weight: 550;
+                color: #88C0D0;
+                margin: 0 0 0.75rem 0;
+            }
+
+            .feature-column-description {
+                color: #D8DEE9;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            @media (min-width: 768px) {
+                .feature-columns {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                .feature-column {
+                    flex-basis: calc(33.333% - 1.33rem);
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .hero-text {
+                    /* padding: 0.4rem 2.4rem; */
+                }
+
+                .hero-text h1 {
+                    font-size: 2rem;
+                    color: #f0f0f0;
+                }
+
+                #home-subtitle {
+                    font-size: 1.2rem;
+                    line-height: 1.7rem;
+                }
+
+                #home-intro {
+                    font-size: 1rem;
+                }
+
+                #features-section {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+
+                .feature-row {
+                    display: flex;
+                    align-items: space-between;
+                    gap: 2rem;
+                }
+
+                .feature-row:nth-child(even) {
+                    flex-direction: row-reverse;
+                }
+
+                .feature-text {
+                    flex: 1;
+                }
+
+                .feature-image {
+                    flex: 2;
+                }
+
+                .feature-image img,
+                .feature-image video {
+                    margin-top: 0rem;
+                }
+
+                .feature-columns {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 4rem 2.4rem;
+                }
+
+                .feature-column-description {
+                    font-size: 1rem;
+                }
+            }
+
+            @media (min-width: 1220px) {
+                body>div.md-container>main>div {
+                    display: none;
+                }
+            }
+
+            @media (min-width: 1080px) {
+                .feature-description {
+                    font-size: 1rem;
+                }
+            }
+        </style>
+
+         <section id="hero-section" class="hero has-image">
+             <div class="hero-container">
+                 <div class="hero-main">
+                     <h1 class="hero-heading">
+                         <span class="hero-text">Terminal API Testing Client</span>
+                     </h1>
+                     <p class="hero-tagline">A powerful, extensible command-line tool for testing and debugging HTTP APIs with a modern terminal interface</p>
+                     <div class="hero-actions">
+                         <div class="hero-action">
+                             <a class="hero-button medium brand" href="#install">Install</a>
+                         </div>
+                         <div class="hero-action">
+                             <a class="hero-button medium alt" href="#documentation-section">Documentation</a>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="hero-image">
+                     <div class="hero-image-container">
+                         <div class="hero-image-bg"></div>
+                         <img class="hero-image-src" src="petitorium.png" alt="Petitorium">
+                     </div>
+                 </div>
+             </div>
+         </section>
+
+         <section id="screenshot-section" style="padding: 4rem 1.4rem;">
+             <h2 style="font-family: 'Roboto Mono', monospace; font-size: 1.4rem; font-weight: 550; color: #88C0D0; margin-bottom: 2rem; margin-left: 0.65rem; margin-top: 0.5rem;">Screenshot</h2>
+             <div class="feature-image">
+                 <img src="petitorium.png" alt="Petitorium Screenshot" style="width: 100%; height: auto; max-width: 1000px; border-radius: 8px; border: solid 2px rgba(94, 129, 172, 0.4);">
+             </div>
+         </section>
+
+         <section id="features-section">
+             <div class="feature-columns">
+                 <div class="feature-column">
+                     <h3 class="feature-column-title">Request Collections</h3>
+                     <p class="feature-column-description">Organize and manage your API requests in hierarchical collections with folders and subfolders</p>
+                 </div>
+                 <div class="feature-column">
+                     <h3 class="feature-column-title">Environment Variables</h3>
+                     <p class="feature-column-description">Manage different environments with variable substitution and secure credential handling</p>
+                 </div>
+                 <div class="feature-column">
+                     <h3 class="feature-column-title">Plugin System</h3>
+                     <p class="feature-column-description">Extend functionality with custom plugins for authentication and logging</p>
+                 </div>
+             </div>
+         </section>
+
+         <section id="plugins-section" style="padding: 4rem 1.4rem;">
+             <h2 style="font-family: 'Roboto Mono', monospace; font-size: 1.4rem; font-weight: 550; color: #88C0D0; margin-bottom: 2rem; margin-left: 0.65rem; margin-top: 0.5rem;">Available Plugins</h2>
+             <div class="feature-columns">
+                 <div class="feature-column">
+                     <h3 class="feature-column-title">Auth Injector</h3>
+                     <p class="feature-column-description">Automatically inject authentication headers into requests</p>
+                 </div>
+                 <div class="feature-column">
+                     <h3 class="feature-column-title">Auth Retriever</h3>
+                     <p class="feature-column-description">Retrieve authentication tokens from responses and stores them in environment variables</p>
+                 </div>
+                 <div class="feature-column">
+                     <h3 class="feature-column-title">Request Logger</h3>
+                     <p class="feature-column-description">Log all HTTP requests and responses for debugging</p>
+                 </div>
+             </div>
+         </section>
+
+         <section id="documentation-section" style="padding: 4rem 1.4rem;">
+             <h2 style="font-family: 'Roboto Mono', monospace; font-size: 1.4rem; font-weight: 550; color: #88C0D0; margin-bottom: 2rem; margin-left: 0.65rem; margin-top: 0.5rem;">Documentation</h2>
+             <div class="feature-columns">
+                 <div class="feature-column">
+                     <h3 class="feature-column-title">Getting Started</h3>
+                     <p class="feature-column-description">Learn how to install and configure Petitorium for your API testing needs</p>
+                 </div>
+                 <div class="feature-column">
+                     <h3 class="feature-column-title">API Reference</h3>
+                     <p class="feature-column-description">Complete reference for all commands, options, and configuration settings</p>
+                 </div>
+                 <div class="feature-column">
+                     <h3 class="feature-column-title">Plugin Development</h3>
+                     <p class="feature-column-description">Guide to creating custom plugins to extend Petitorium's functionality</p>
+                 </div>
+             </div>
+         </section>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; color: #D8DEE9; background: rgba(46, 52, 64, 0.8); margin-top: 4rem; border-top: 1px solid rgba(94, 129, 172, 0.3);">
         <p>&copy; 2025 Petitorium. Open source project.</p>
     </footer>
 

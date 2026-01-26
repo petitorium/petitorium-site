@@ -1,18 +1,21 @@
-// Simple JavaScript for interactive elements
+// Interactive elements for Petitorium site
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
-    navLinks.forEach(link => {
+    anchorLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return; // Skip links that just have #
+
             e.preventDefault();
 
-            const targetId = this.getAttribute('href').substring(1);
+            const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
-                const headerHeight = document.querySelector('header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
+                const headerHeight = document.querySelector('.md-header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight - 20;
 
                 window.scrollTo({
                     top: targetPosition,
@@ -22,19 +25,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add scroll effect to header
+    // Header scroll effect
     window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
+        const header = document.querySelector('.md-header');
+        if (window.scrollY > 50) {
+            header.style.background = 'rgba(15, 15, 31, 0.98)';
+            header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.4)';
         } else {
-            header.style.background = '#fff';
-            header.style.backdropFilter = 'none';
+            header.style.background = 'rgba(15, 15, 31, 0.95)';
+            header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
         }
     });
 
-    // Animate elements on scroll
+    // Animate feature columns on scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -49,12 +52,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe feature and plugin cards
-    const cards = document.querySelectorAll('.feature-card, .plugin-card');
-    cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    // Observe feature columns
+    const columns = document.querySelectorAll('.feature-column');
+    columns.forEach(column => {
+        column.style.opacity = '0';
+        column.style.transform = 'translateY(30px)';
+        column.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(column);
     });
+
+     // Add subtle glow effect on hover for interactive elements
+     const interactiveElements = document.querySelectorAll('.md-header__button, .md-header__nav-link, .feature-column');
+
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            this.style.filter = 'drop-shadow(0 0 8px rgba(136, 192, 208, 0.3))';
+        });
+
+        element.addEventListener('mouseleave', function() {
+            this.style.filter = 'none';
+        });
+    });
+
+    // Terminal mockup animation (subtle typing effect)
+    const terminalText = document.querySelector('.hero-image svg text');
+    if (terminalText) {
+        // Add a subtle pulsing effect to the terminal
+        setInterval(() => {
+            const terminal = document.querySelector('.hero-image svg');
+            if (terminal) {
+                terminal.style.filter = 'drop-shadow(0 0 2px rgba(136, 192, 208, 0.1))';
+                setTimeout(() => {
+                    terminal.style.filter = 'none';
+                }, 2000);
+            }
+        }, 5000);
+    }
 });
