@@ -8,6 +8,7 @@
 :root {
     --md-text-font: "Open Sans";
     --md-code-font: "Roboto Mono";
+    --md-brand-font: "Cinzel";
     --nord0: #2E3440;
     --nord1: #3B4252;
     --nord2: #434C5E;
@@ -39,13 +40,12 @@ body {
     font-family: var(--md-text-font), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: var(--nord4);
-    background: var(--nord0);
+    background: var(--nord1);
     background-image: 
-        radial-gradient(at 0% 0%, rgba(94, 129, 172, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(136, 192, 208, 0.1) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(76, 86, 106, 0.1) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, rgba(59, 66, 82, 0.2) 0px, transparent 50%),
-        linear-gradient(135deg, var(--nord0) 0%, var(--nord1) 100%);
+        radial-gradient(at 0% 0%, rgba(136, 192, 208, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(129, 161, 193, 0.15) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(76, 86, 106, 0.1) 0px, transparent 80%),
+        linear-gradient(180deg, var(--nord1) 0%, var(--nord2) 100%);
     background-attachment: fixed;
     position: relative;
     overflow-x: hidden;
@@ -56,38 +56,38 @@ body::before,
 body::after {
     content: '';
     position: fixed;
-    width: 60vw;
-    height: 60vw;
+    width: 70vw;
+    height: 70vw;
     border-radius: 50%;
-    filter: blur(100px);
+    filter: blur(120px);
     z-index: -1;
-    opacity: 0.15;
+    opacity: 0.25;
     pointer-events: none;
 }
 
 body::before {
-    top: -10vw;
-    right: -10vw;
-    background: var(--nord9);
+    top: -15vw;
+    right: -15vw;
+    background: var(--nord8);
 }
 
 body::after {
-    bottom: -10vw;
-    left: -10vw;
-    background: var(--nord10);
+    bottom: -15vw;
+    left: -15vw;
+    background: var(--nord9);
 }
 
 /* Header and Navigation */
 .md-header {
-    background: rgba(46, 52, 64, 0.9);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(59, 66, 82, 0.8); /* Using nord1-ish color */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(136, 192, 208, 0.1);
+    border-bottom: 1px solid rgba(136, 192, 208, 0.15);
     transition: all 0.4s ease-in-out;
 }
 
@@ -100,8 +100,12 @@ body::after {
     margin: 0 auto;
 }
 
+.logo-text, .brand-text {
+    font-family: var(--md-brand-font), serif;
+    letter-spacing: 0.05em;
+}
+
 .logo-text {
-    font-family: var(--md-code-font), monospace;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--nord8);
@@ -112,6 +116,15 @@ body::after {
 .md-header__button {
     text-decoration: none;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.header-logo {
+    height: 38px;
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(136, 192, 208, 0.3));
 }
 
 .md-header__title {
@@ -125,7 +138,7 @@ body::after {
 }
 
 .md-header__topic span {
-    color: #f0f0f0;
+    color: var(--nord6);
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -146,7 +159,7 @@ body::after {
 
 .md-header__nav-link {
     text-decoration: none;
-    color: #f0f0f0;
+    color: var(--nord5);
     font-family: var(--md-code-font), monospace;
     font-size: 0.9rem;
     font-weight: 500;
@@ -198,7 +211,7 @@ body::after {
     transform-origin: 1px;
 }
 
-/* Mobile Menu Active State (Hamburger Animation) */
+/* Mobile Menu Active State */
 .mobile-menu-btn.active span:first-child {
     transform: rotate(45deg);
 }
@@ -242,12 +255,26 @@ body::after {
     min-width: 400px;
 }
 
+.hero-brand-logo {
+    height: 120px;
+    width: auto;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
 .hero-heading {
     font-size: 3rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    color: #f0f0f0;
+    color: var(--nord6);
     text-align: left;
 }
 
@@ -381,7 +408,7 @@ body::after {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--md-text-font), sans-serif;
     font-weight: 800 !important;
-    color: #f0f0f0;
+    color: var(--nord6);
 }
 
 h2 {
@@ -410,20 +437,20 @@ h2 {
 .feature-column {
     position: relative;
     z-index: 1;
-    background: rgba(46, 52, 64, 0.4);
-    backdrop-filter: blur(4px);
+    background: rgba(67, 76, 94, 0.3); /* nord2-ish transparency */
+    backdrop-filter: blur(8px);
     border-radius: 4px;
     padding: 1.5rem 1.5rem 1.5rem 2rem;
-    border: 1px solid rgba(136, 192, 208, 0.1);
+    border: 1px solid rgba(136, 192, 208, 0.15);
     border-left: 4px solid var(--nord10);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .feature-column:hover {
-    border-color: rgba(136, 192, 208, 0.3);
+    border-color: rgba(136, 192, 208, 0.4);
     border-left: 4px solid var(--nord8);
-    background: rgba(59, 66, 82, 0.6);
+    background: rgba(76, 86, 106, 0.5); /* nord3-ish */
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     transform: translateX(5px);
 }
@@ -470,12 +497,27 @@ h3.feature-column-title {
 
 /* Footer */
 footer {
-    background: rgba(15, 15, 31, 0.9);
-    color: #f0f0f0;
+    background: rgba(46, 52, 64, 0.95);
+    color: var(--nord6);
     text-align: center;
-    padding: 2rem;
-    border-top: 1px solid rgba(94, 129, 172, 0.2);
+    padding: 3rem 2rem;
+    border-top: 1px solid rgba(136, 192, 208, 0.1);
     margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    height: 48px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
 }
 
 footer p {
@@ -488,7 +530,7 @@ footer p {
 .install-command {
     display: flex;
     align-items: center;
-    background: rgba(46, 52, 64, 0.8);
+    background: rgba(67, 76, 94, 0.6);
     border: 1px solid var(--nord10);
     border-radius: 6px;
     padding: 0.5rem 1rem;
@@ -534,7 +576,7 @@ footer p {
 .terminal-container {
     max-width: 800px;
     margin: 2rem auto;
-    background: #1e1e1e;
+    background: #2E3440; /* Nord0 */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
@@ -542,7 +584,7 @@ footer p {
 }
 
 .terminal-header {
-    background: #333;
+    background: #3B4252; /* Nord1 */
     padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
@@ -560,15 +602,15 @@ footer p {
     border-radius: 50%;
 }
 
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c93f; }
+.dot.red { background: var(--nord11); }
+.dot.yellow { background: var(--nord13); }
+.dot.green { background: var(--nord14); }
 
 .terminal-title {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    color: #999;
+    color: var(--nord4);
     font-size: 0.8rem;
     font-family: var(--md-code-font), monospace;
 }
@@ -609,7 +651,7 @@ footer p {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: var(--nord1);
+    background: var(--nord2);
     color: var(--nord8);
     width: 48px;
     height: 48px;
@@ -663,7 +705,7 @@ footer p {
         left: 0;
         width: 100%;
         height: 0;
-        background: rgba(46, 52, 64, 0.98);
+        background: rgba(59, 66, 82, 0.98);
         backdrop-filter: blur(10px);
         overflow: hidden;
         transition: height 0.3s ease;
@@ -792,7 +834,7 @@ footer p {
 .nord-badge {
     display: inline-flex;
     align-items: center;
-    background: var(--nord1);
+    background: var(--nord2);
     border: 1px solid var(--nord3);
     border-radius: 4px;
     padding: 0.2rem 0.5rem;
@@ -805,7 +847,7 @@ footer p {
 
 .nord-badge:hover {
     border-color: var(--nord8);
-    background: var(--nord2);
+    background: var(--nord3);
     transform: translateY(-1px);
 }
 
