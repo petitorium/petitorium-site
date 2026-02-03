@@ -8,7 +8,7 @@ set -e
 OWNER="petitorium"
 REPO="petitorium"
 BINARY_NAME="petitorium"
-VERSION="v0.1.1"
+VERSION="v0.3.0"
 
 # Detect OS
 OS_TYPE=$(uname -s)
