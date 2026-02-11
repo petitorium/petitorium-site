@@ -1,3 +1,4 @@
+import React from 'react';
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
@@ -5,14 +6,15 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
+import InstallTabs from '@site/src/components/InstallTabs';
 
 import styles from './index.module.css';
-import CodeBlock from '@theme/CodeBlock';
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className={clsx('container', styles.heroContent)}>
@@ -30,11 +32,7 @@ function HomepageHeader() {
           </Heading>
           <p className="hero__subtitle" style={{fontFamily: 'Cinzel, serif'}}>{siteConfig.tagline}</p>
           
-          <div style={{maxWidth: '500px', margin: '1.5rem 0'}}>
-            <CodeBlock language="bash">
-              curl -fsSL https://petitorium.dev/install.sh | bash
-            </CodeBlock>
-          </div>
+          <InstallTabs />
 
           <div className={styles.buttons}>
             <Link
