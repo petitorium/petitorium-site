@@ -1,0 +1,18 @@
+html[data-theme='dark'] .logoLight {
+  display: none;
+}
+
+html[data-theme='light'] .logoDark {
+  display: none;
+}
+
+.themedImage {
+  height: 2rem; /* Docusaurus default navbar logo height */
+  width: auto;
+  transition: all 0.2s;
+  fill: currentColor;
+}
+
+:global(.navbar__brand:hover) .themedImage {
+  /* No need to set color here if the SVG uses currentColor */
+}

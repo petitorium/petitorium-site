@@ -8,6 +8,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --petitorium-logo-color: rgb(2,76,60);
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -21,6 +22,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
+  --petitorium-logo-color: #FFFFFF;
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -35,4 +37,16 @@
   font-family: 'Cinzel', serif;
   font-weight: 700;
   letter-spacing: 0.05em;
+  color: var(--petitorium-logo-color);
+  transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
+
+.navbar__brand svg {
+  transition: fill var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.navbar__brand:hover {
+  --petitorium-logo-color: var(--ifm-color-primary);
+}
+
+

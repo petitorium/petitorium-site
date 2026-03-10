@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Petitorium',
   tagline: 'Terminal API Testing Client',
-  favicon: 'img/petitorium_helmet_minimalist_style_transparent.png',
+  favicon: 'img/logos/08-light.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -52,7 +52,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/petitorium_helmet_minimalist_style_transparent.png',
+    image: 'img/logos/08.svg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -60,8 +60,8 @@ const config: Config = {
       title: 'Petitorium',
       logo: {
         alt: 'Petitorium Logo',
-        src: 'img/petitorium_helmet_minimalist_style_transparent.png',
-        srcDark: 'img/petitorium_helmet_minimalist_style_transparent_white.png',
+        src: 'img/logos/08.svg',
+        srcDark: 'img/logos/08-light.svg',
       },
       items: [
         {
