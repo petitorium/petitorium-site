@@ -108,7 +108,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Petitorium.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Petitorium. Created by <a href="https://hectorbarral.com" target="_blank" rel="noopener noreferrer">Héctor Barral</a>.`,
     },
     prism: {
       theme: prismThemes.github,

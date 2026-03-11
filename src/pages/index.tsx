@@ -22,15 +22,15 @@ function HomepageHeader() {
           <ThemedImage
             alt="Petitorium Logo"
             sources={{
-              light: useBaseUrl('/img/logos/08.svg'),
+              light: useBaseUrl('/img/logos/08-light.svg'),
               dark: useBaseUrl('/img/logos/08.svg'),
             }}
             style={{height: '200px', marginBottom: '0.2rem'}}
           />
-          <Heading as="h1" className="hero__title" style={{fontFamily: 'Cinzel, serif', color: 'rgb(2,76,60)'}}>
+          <Heading as="h1" className="hero__title" style={{fontFamily: 'Cinzel, serif', color: 'var(--petitorium-logo-color-hero)'}}>
             {siteConfig.title}
           </Heading>
-          <p className="hero__subtitle" style={{fontFamily: 'Cinzel, serif', color: 'rgb(2,76,60)'}}>{siteConfig.tagline}</p>
+          <p className="hero__subtitle" style={{fontFamily: 'Cinzel, serif', color: 'var(--petitorium-logo-color-hero)'}}>{siteConfig.tagline}</p>
           
           <InstallTabs />
 

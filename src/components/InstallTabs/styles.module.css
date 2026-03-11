@@ -1,7 +1,7 @@
 .white {
-  color: white;
+  color: var(--petitorium-logo-color-hero);
 }
 
 .white[aria-selected='true'] {
-  border-bottom-color: white;
+  border-bottom-color: var(--petitorium-logo-color-hero);
 }
